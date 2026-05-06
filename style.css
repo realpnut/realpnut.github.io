@@ -3,7 +3,7 @@ margin:0;
 height:100vh;
 display:flex;
 flex-direction:column;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 color:#cfe7ff;
 background:#050914;
 overflow:hidden;
@@ -21,10 +21,12 @@ content:"";
 position:absolute;
 inset:0;
 background-image:
-radial-gradient(2px 2px at 10% 20%,#7cc7ff,transparent),
-radial-gradient(2px 2px at 50% 50%,#fff,transparent),
-radial-gradient(2px 2px at 80% 30%,#7fb8ff,transparent),
-radial-gradient(2px 2px at 30% 70%,#0ff,transparent);
+radial-gradient(2px 2px at 10% 20%, #7cc7ff, transparent),
+radial-gradient(2px 2px at 50% 50%, #ffffff, transparent),
+radial-gradient(2px 2px at 80% 30%, #7fb8ff, transparent),
+radial-gradient(2px 2px at 30% 70%, #00ffff, transparent),
+radial-gradient(1px 1px at 60% 10%, #ffffff, transparent),
+radial-gradient(1px 1px at 20% 80%, #7cc7ff, transparent);
 background-size:400px 400px;
 animation:drift 120s linear infinite;
 opacity:.25;
@@ -59,83 +61,147 @@ from {transform:translateY(0);}
 to {transform:translateY(100%);}
 }
 
-.container {
+.frame {
 display:flex;
-flex-direction:column;
+justify-content:center;
+align-items:center;
 height:100%;
-padding:10px 20px;
+padding:20px;
 box-sizing:border-box;
 z-index:2;
 }
 
-.up h1 {
-font-size:1.2rem;
+.container {
+width:100%;
+max-width:900px;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.header {
+text-align:left;
+border-bottom:1px solid rgba(124,199,255,.3);
+padding-bottom:10px;
+}
+
+.title {
+font-size:1.4rem;
 margin:0;
 letter-spacing:2px;
 color:#7cc7ff;
 }
 
-.status {
-font-size:.75rem;
-color:#ff3b6b;
-letter-spacing:1px;
+.subtitle {
+font-size:.65rem;
+color:#ff2b2b;
+margin-top:5px;
+letter-spacing:2px;
+position:relative;
+animation:glitch 1.5s infinite;
+}
+
+.subtitle::before,
+.subtitle::after {
+content:"NOT YOUR AVERAGE PENTESTER";
+position:absolute;
+left:0;
+top:0;
+width:100%;
+overflow:hidden;
+}
+
+.subtitle::before {
+color:#ff2b2b;
+transform:translate(1px,0);
+opacity:.6;
+animation:glitch 1.5s infinite;
+}
+
+.subtitle::after {
+color:#7cc7ff;
+transform:translate(-1px,0);
+opacity:.4;
+animation:glitch 1.2s infinite reverse;
+}
+
+@keyframes glitch {
+0% {transform:translate(0);}
+20% {transform:translate(-1px,1px);}
+40% {transform:translate(1px,-1px);}
+60% {transform:translate(-1px,0);}
+80% {transform:translate(1px,1px);}
+100% {transform:translate(0);}
+}
+
+.nav {
+display:flex;
+gap:20px;
+}
+
+.nav a {
+color:#7cc7ff;
+text-decoration:none;
+font-size:.85rem;
+padding:5px 10px;
+border:1px solid rgba(124,199,255,.4);
+background:rgba(0,120,255,.08);
+transition:.2s;
+}
+
+.nav a:hover {
+background:#7cc7ff;
+color:#050914;
+box-shadow:0 0 10px #7cc7ff;
 }
 
 .content {
-flex-grow:1;
 display:flex;
-flex-direction:column;
-align-items:center;
 justify-content:center;
 }
 
-.terminal-window {
+.panel {
 width:100%;
-max-width:700px;
+max-width:800px;
 background:rgba(10,20,40,.92);
 border:1px solid #2b6fb8;
 box-shadow:0 0 20px rgba(0,120,255,.2);
 backdrop-filter:blur(6px);
 }
 
-.terminal-header {
-background:#081a33;
-color:#7cc7ff;
-padding:5px 10px;
+.section-title {
+padding:10px 15px;
 font-size:.75rem;
-letter-spacing:1px;
-border-bottom:1px solid #2b6fb8;
+letter-spacing:2px;
+color:#7cc7ff;
+border-bottom:1px solid rgba(43,111,184,.5);
+background:#081a33;
 }
 
-.text {
+.description {
 padding:15px;
 font-size:.95rem;
-line-height:1.5;
+line-height:1.6;
 }
 
-.prompt {
-color:#fff;
+.footer {
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px 0;
+border-top:1px solid rgba(124,199,255,.3);
 }
 
-.response {
+.footer a {
 color:#7cc7ff;
-margin-bottom:15px;
-}
-
-.response a {
-color:#7fb8ff;
 text-decoration:none;
-display:block;
-margin:4px 0;
+font-size:.8rem;
+transition:.2s;
 }
 
-.response a:hover {
-text-decoration:underline;
-}
-
-.error {
-color:#ff3b6b;
-text-shadow:0 0 5px #ff3b6b;
+.footer a:hover {
+color:#ffffff;
+text-shadow:0 0 8px #7cc7ff;
 }
 
 .cursor {
@@ -144,31 +210,4 @@ animation:blink 1s step-end infinite;
 
 @keyframes blink {
 50% {opacity:0;}
-}
-
-.bottom {
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:center;
-gap:10px;
-padding:15px 0;
-}
-
-.return-link {
-color:#7cc7ff;
-text-decoration:none;
-border:1px solid #7cc7ff;
-padding:6px 14px;
-font-size:.9rem;
-transition:.2s;
-background:rgba(0,120,255,.1);
-}
-
-.return-link:hover {
-background:#7cc7ff;
-color:#050914;
-box-shadow:0 0 10px #7cc7ff;
 }
