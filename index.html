@@ -1,94 +1,59 @@
 <!DOCTYPE html>
-
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PNUT SPACE CONTROL</title>
+<title>pnutsec.tech</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar">
-<div class="logo">pnutsec.tech</div>
-<div class="sub">not your average pentester</div>
-</div>
+<div class="crt-overlay"></div>
+<div class="scanlines"></div>
+<div class="space"></div>
 
-<div class="nav">
-<a href="/portfolio">PORTFOLIO</a>
-<a href="/sat">SATELLITE</a>
-<label for="t1">TELEMETRY</label>
-<label for="t2">SYSTEMS</label>
-</div>
+<div class="container">
 
-<input type="checkbox" id="t1">
-<input type="checkbox" id="t2">
+<header class="up">
+<h1>> PNUTSEC.TECH <span class="cursor">_</span></h1>
+<p class="status">[ NOT YOUR AVERAGE PENTESTER ]</p>
+</header>
 
-<div class="grid">
+<main class="content">
 
-<div class="card">
-<h3>MISSION STATUS</h3>
-<div class="status ok">SYSTEM: ONLINE</div>
-<div class="status ok">ORBIT: STABLE</div>
-<div class="status warn">THREAT LEVEL: LOW</div>
-<div class="status ok">ENCRYPTION: ACTIVE</div>
-</div>
+<div class="terminal-window">
 
-<div class="card">
-<h3>ORBIT DATA</h3>
-<div class="data">
-ALTITUDE: 402 KM<br>
-SPEED: 27500 KM/H<br>
-LATENCY: 12 MS<br>
-SIGNAL: STRONG
-</div>
-</div>
+<div class="terminal-header">tty0 — mission control</div>
 
-<div class="card">
-<h3>RADAR SCAN</h3>
-<div class="radar">
-<div class="dot d1"></div>
-<div class="dot d2"></div>
-<div class="dot d3"></div>
-</div>
-</div>
+<div class="text">
 
-<div class="card wide tele">
-<h3>LIVE TELEMETRY</h3>
-<div class="feed">
-<div>[OK] uplink stable</div>
-<div>[SCAN] deep space sweep running</div>
-<div>[OK] packet sync complete</div>
-<div>[WARN] minor interference detected</div>
-<div>[OK] signal restored</div>
-<div>[DATA] receiving orbital logs</div>
-</div>
-</div>
+<p><span class="prompt">root@orbit:~#</span> status</p>
+<p class="response">SYSTEM ONLINE // ORBIT STABLE // ENCRYPTION ACTIVE</p>
 
-<div class="card wide sys">
-<h3>SYSTEM MODULES</h3>
+<p><span class="prompt">root@orbit:~#</span> links</p>
+<p class="response">
+<a href="/portfolio">→ portfolio.access</a><br>
+<a href="/sat">→ satellite.interface</a>
+</p>
 
-<div class="modules">
-<button>RUN DIAGNOSTICS</button>
-<button>RESET LINK</button>
-<button>CALIBRATE NAV</button>
-<button>DEPLOY SCAN</button>
-</div>
+<p><span class="prompt">root@orbit:~#</span> telemetry</p>
+<p class="response">ALT: 402KM / SPEED: 27500KMH / SIGNAL: STRONG</p>
 
-<div class="modules">
-<button>ARM FIREWALL</button>
-<button>DECRYPT STREAM</button>
-<button>RESTART CORE</button>
-</div>
+<p><span class="prompt">root@orbit:~#</span> notes</p>
+<p class="error">WARNING: experimental hacking environment active</p>
 
 </div>
 
 </div>
 
-<div class="footer">
-<a href="https://github.com/realpnut">GITHUB</a>
-<a href="https://www.youtube.com/@pnuthacker">YOUTUBE</a>
-<a href="mailto:pnutvacation@gmail.com">EMAIL</a>
+</main>
+
+<footer class="bottom">
+<a href="https://github.com/realpnut" class="return-link">GITHUB</a>
+<a href="https://www.youtube.com/@pnuthacker" class="return-link">YOUTUBE</a>
+<a href="mailto:pnutvacation@gmail.com" class="return-link">EMAIL</a>
+</footer>
+
 </div>
 
 </body>
