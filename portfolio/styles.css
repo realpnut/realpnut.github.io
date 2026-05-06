@@ -192,10 +192,15 @@ transition:.2s;
 .footer a:hover {
 color:#ffffff;
 text-shadow:0 0 8px #7cc7ff;
+}
+
 .cursor {
+display:inline-block;
 animation:blink 1s step-end infinite;
 }
 
 @keyframes blink {
-50% {opacity:0;}
+50% {
+opacity:0;
+}
 }
