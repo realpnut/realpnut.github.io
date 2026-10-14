@@ -1,1 +1,406 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261014-04-caa1adb","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/05db820ba1544614.telemetry_sdk.js" integrity="sha512-a7JzkQDDcioSXpM61nxTfeRW7PcxWQy5+BrhyeTFmQFsXJ+Gncm0y50u7fTA7qOPegFnRgqCfa0mGUOK1yjDWQ=="></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Grandpa's Boiler Defense</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#10191d;--panel:#19292c;--edge:#526866;--ink:#f4f0e2;--muted:#b4c7c0;--accent:#d8ed82;--amber:#f3ba71}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Fira Sans",sans-serif}
+    button{cursor:pointer;font-weight:800;transition:filter .15s,transform .15s}button:hover:not(:disabled){filter:brightness(1.13);transform:translateY(-1px)}
+    button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible,canvas:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    .shell{width:100%;min-height:calc(100 * min(var(--vh, 1vh), 1vh));padding:clamp(10px,2vw,24px);background:radial-gradient(ellipse at 45% -20%,#34484a,#10191d 68%)}
+    .wrap{max-width:1540px;margin:auto}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #84948a55;padding-bottom:12px}
+    .mono{font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:.06em}.head h1{font-weight:900;margin:0}.head p{margin:0 0 3px}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:16px;margin-top:16px}
+    .stage{position:relative;height:clamp(490px,54vw,700px);overflow:hidden;border:2px solid #647b93;border-radius:17px;background:#111c20;box-shadow:0 24px 65px #0008,inset 0 0 0 4px #ffffff08}
+    #game{width:100%;height:100%;display:block;touch-action:none}.badge{background:#101e20e8;border:1px solid #8baddc88;border-radius:7px;padding:6px 9px;color:var(--accent);font:700 10px "Space Mono",monospace}
+    .stage-top,.stage-bottom{position:absolute;left:10px;right:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;pointer-events:none}
+    .stage-top{top:10px}.stage-bottom{bottom:10px;align-items:end}.objective{max-width:60%;padding:8px 10px;background:#0e1d20e9;border-left:4px solid var(--accent);border-radius:5px;font-size:12px;font-weight:800}
+    #notice{position:absolute;top:16%;left:50%;transform:translateX(-50%);width:90%;text-align:center;color:var(--accent);font-weight:900;font-size:clamp(18px,3vw,31px);text-shadow:0 3px 12px black;opacity:0;pointer-events:none;transition:opacity .2s}#notice.show{opacity:1}
+    .mapbox{padding:5px;background:#0e1d20e9;border:1px solid #cadd8b88;border-radius:8px}#minimap{display:block;width:180px;height:67px}
+    .side{display:flex;flex-direction:column;gap:9px}.hud{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .metric,.panel{background:var(--panel);border:1px solid #687b766e;border-radius:11px;padding:11px;box-shadow:inset 0 1px #ffffff12}
+    .metric-label{display:block;color:#aec5b9;font:700 10px "Space Mono",monospace}.metric strong{display:block;font-size:21px;font-weight:900;margin-top:3px}
+    .track{height:6px;background:#0a1719;border-radius:10px;overflow:hidden;margin-top:6px}.fill{height:100%;background:var(--accent);width:100%}#health-fill{background:#e894a2}#energy-fill{background:#85d9db}#heat-fill{background:var(--amber)}
+    .panel h2{margin:0 0 7px;font-weight:900}.panel p{margin:3px 0 9px;color:var(--muted);font-size:12px;line-height:1.45}
+    .buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.primary,.secondary{border-radius:8px;padding:9px 7px;min-height:40px;border:0}
+    .primary{background:#d8ed82;color:#18221d}.secondary{background:#30484a;color:#fff;border:1px solid #79928a}
+    .status{background:#162628;border-left:4px solid var(--accent);border-radius:5px;padding:9px;color:var(--accent);font-size:12px;font-weight:700;min-height:38px}
+    .quality{display:grid;gap:6px;border-top:1px solid #ffffff25;padding-top:10px;margin-top:10px}.quality label{display:flex;align-items:center;gap:8px;font-size:12px}.quality input{accent-color:var(--accent)}
+    .overlay{position:absolute;inset:0;z-index:12;display:flex;align-items:center;justify-content:center;padding:12px;background:#091518e9;backdrop-filter:blur(5px)}.overlay.hidden{display:none}
+    .modal{width:min(100%,650px);max-height:100%;overflow:auto;padding:clamp(17px,3vw,27px);border:1px solid #b6cf89a0;border-radius:16px;background:#192b2c;box-shadow:0 24px 75px #000b;text-align:center}
+    .modal h2{margin:5px 0 10px;color:var(--accent);font-weight:900;line-height:1.1}.modal p{color:#d9e4d9;line-height:1.45}.modal .buttons{margin-top:12px}
+    .upgrade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;text-align:left;margin:13px 0}
+    .upgrade{border:1px solid #697d98;background:#22393a;border-radius:9px;padding:9px;display:grid;gap:4px}.upgrade strong{font-size:12px}.upgrade small{color:#bcd0c5;font-size:11px;line-height:1.3}.upgrade button{font-size:11px}
+    .pig-sprite-tools{position:absolute;left:10px;bottom:10px;z-index:4;display:flex;align-items:center;gap:7px;padding:7px 9px;background:#101e20e9;border:1px solid #cadd8b88;border-radius:8px}.pig-sprite-tools label{cursor:pointer;color:#d8ed82;font:700 10px "Space Mono",monospace}.pig-sprite-tools input{position:absolute;width:1px;height:1px;opacity:0}.pig-sprite-preview{display:none;width:34px;height:34px;object-fit:contain}.pig-sprite-placeholder{color:#b4c7c0;font:700 10px "Space Mono",monospace}.touch{display:none;position:absolute;inset:0;z-index:5;pointer-events:none}.touch-group{position:absolute;bottom:85px;display:flex;gap:4px}.touch-group.left{left:7px}.touch-group.right{right:7px}
+    .touch button{pointer-events:auto;touch-action:none;user-select:none;min-width:37px;height:43px;padding:3px;background:#102427ee;border:1px solid #d8ed82a0;border-radius:8px;color:#fff;font-size:10px;font-weight:900}.touch button.pressed{background:#6c8245}
+    @media(pointer:coarse){.touch{display:block}}@media(max-width:980px){.layout{grid-template-columns:1fr}.hud{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:620px){.shell{padding:8px}.stage{height:560px}.hud{grid-template-columns:repeat(2,1fr)}#minimap{width:112px;height:53px}.objective{font-size:10px;max-width:55%}.touch-group{bottom:80px}.touch button{min-width:31px;font-size:9px}.upgrade{padding:7px}}
+    @media(prefers-reduced-motion:reduce){button,#notice{transition:none}}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/570d53629f0b998d.data_sdk.js" type="text/javascript" integrity="sha512-JEN39+V+Nvv9ZZOVS8vNk1iA9ErZJHTdgOw9KzPuMiK7m0I+KPEr/wmTnCFIQVsDjCZgJWfGnFi1IQh2Io2qyA=="></script>
+  <script src="/_sdk/0b63fb8940df03d4.editing_sdk.js" type="text/javascript" integrity="sha512-fFkkekAA7XKU9UcNO+7a7lGi1SDVYUdIo1lpZS9YpfVovu1WAj3C/MEr/w8zt6Jwq6OKflaYkwf4eOUpMYGz9A=="></script>
+  <script src="/_sdk/f195026a424c1f85.resizing_sdk.js" type="text/javascript" integrity="sha512-8On4Z+AXh1abEzZJ9Dbn9wOvFg+k1LsAaAzKGQ7LlfgXajZ9xEmZaZ1QVzv0AWhCZtCsEpWSOG9DgLri06TS7A=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full" style="background: rgb(16, 16, 29);">
+  <div class="shell">
+   <div class="wrap">
+    <header class="head">
+     <div>
+      <p data-template-id="header-kicker" class="canva-text mono" style="color: rgb(130, 150, 237); font-weight: 700; font-style: normal; font-size: 12px;">INDUSTRIAL PLANT / NIGHT SHIFT</p>
+      <h1 data-template-id="header-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 32px;">GRANDPA'S BOILER DEFENSE</h1>
+     </div><span data-template-id="header-tag" class="canva-tag badge" style="background: rgb(25, 27, 44); color: rgb(130, 137, 237); font-weight: 700; font-style: normal; font-size: 17px;">BOILER DEFENSE · ENDLESS MODE</span>
+    </header>
+    <main class="layout">
+     <section class="stage" aria-label="Gra: obrona pieca w zakładzie przemysłowym">
+      <canvas id="game" tabindex="0" role="img" aria-label="Przewijana mapa zakładu z piecem, przeciwnikami, warchlakami i wyjściem"></canvas>
+      <div class="stage-top">
+       <span data-template-id="stage-tag" class="canva-tag badge" style="background: rgb(16, 30, 32); color: rgb(216, 237, 130); font-weight: 700; font-style: normal; font-size: 16px;">● KOTŁOWNIA / SEKTOR PRODUKCYJNY</span><span id="zone" class="badge">BOILER ROOM</span>
+      </div>
+      <div id="notice" aria-live="assertive"></div>
+      <div class="stage-bottom">
+       <div id="objective" class="objective" aria-live="polite"></div>
+       <div class="mapbox">
+        <canvas id="minimap" width="360" height="130" role="img" aria-label="Minimapa zakładu"></canvas>
+       </div>
+      </div>
+      <div class="touch" aria-label="Sterowanie dotykowe">
+       <div class="touch-group left">
+        <button type="button" data-hold="left" aria-label="W lewo">◀</button><button type="button" data-hold="right" aria-label="W prawo">▶</button><button type="button" data-hold="sprint" aria-label="Bieg">BIEG</button>
+       </div>
+       <div class="touch-group right">
+        <button type="button" data-action="jump">SKOK</button><button type="button" data-hold="fire">STRZAŁ</button><button type="button" data-action="shock">FALA</button><button type="button" data-action="interact">E</button><button type="button" data-action="shop">SKLEP</button>
+       </div>
+      </div>
+      <div id="start-screen" class="overlay">
+       <div data-template-id="start-card" class="canva-card modal" style="background: rgb(25, 27, 44);">
+        <p data-template-id="start-kicker" class="canva-text mono" style="color: rgb(243, 186, 113); font-weight: 700; font-style: normal; font-size: 12px;">TECHNICAL SECURITY SHIFT</p>
+        <h2 data-template-id="start-title" class="canva-text" style="color: rgb(130, 150, 237); font-weight: 900; font-style: normal; font-size: 24px;">DEFEND THE BOILER. COMPLETE THE SHIFT.</h2>
+        <p data-template-id="start-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Earn 3000 points by fighting off the fictional comic pigs and rescuing the piglets. Upgrade the boiler between waves. After reaching the goal, go to the employee exit and press E. A/D: move · W: jump · J: shoot · Q: wave · B: shop.</p><button id="start-button" data-template-id="start-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">START GAME</button>
+       </div>
+      </div>
+      <div id="pause-screen" class="overlay hidden">
+       <div data-template-id="pause-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
+        <h2 data-template-id="pause-title" class="canva-text" style="color: rgb(216, 237, 130); font-weight: 900; font-style: normal; font-size: 24px;">BOILER ROOM PAUSED</h2>
+        <p data-template-id="pause-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Production is waiting. Return when you are ready.</p><button id="resume-button" data-template-id="resume-button" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">BACK TO GAME</button>
+       </div>
+      </div>
+      <div id="help-screen" class="overlay hidden">
+       <div data-template-id="help-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
+        <h2 data-template-id="help-title" class="canva-text" style="color: rgb(216, 237, 130); font-weight: 900; font-style: normal; font-size: 24px;">INSTRUCTIONS</h2>
+        <p data-template-id="help-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Energy shots repel fictional enemies without graphic injury. Free the piglets from their cages and lead them to the boiler room. Open gates with interact. The shop is available at the station and between waves. Points spent in the shop do not reduce progress toward the 3000-point target.</p>
+        <p data-template-id="help-keys" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">A/D lub ←/→ — ruch · Shift — bieg · W/↑/Spacja — skok · J/K — strzał · Q — fala · E — interakcja · B — sklep · P/Esc — pauza · F3 — hitboxy. Dotyk: przyciski na scenie.</p><button id="close-help" data-template-id="close-help" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">CLOSE INSTRUCTIONS</button>
+       </div>
+      </div>
+      <div id="shop-screen" class="overlay hidden">
+       <div data-template-id="shop-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
+        <p data-template-id="shop-kicker" class="canva-text mono" style="color: rgb(243, 186, 113); font-weight: 700; font-style: normal; font-size: 12px;">SYSTEM UPGRADES</p>
+        <h2 data-template-id="shop-title" class="canva-text" style="color: rgb(216, 237, 130); font-weight: 900; font-style: normal; font-size: 24px;">BOILER UPGRADES</h2>
+        <p data-template-id="shop-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Każda gałąź ma kolejne poziomy. Ceny rosną, a przyrosty stopniowo maleją. Zakupy nie resetują fal ani postępu zmiany.</p><strong id="shop-balance" aria-live="polite"></strong>
+        <div class="upgrade-grid" id="upgrade-grid">
+         <article class="upgrade" data-upgrade="durability">
+          <strong data-template-id="upgrade-durability" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">BOILER DURABILITY</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="power">
+          <strong data-template-id="upgrade-power" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">HEATING POWER</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="repair">
+          <strong data-template-id="upgrade-repair" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUTOMATIC REPAIR</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="armor">
+          <strong data-template-id="upgrade-armor" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ARMOR</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="fuel">
+          <strong data-template-id="upgrade-fuel" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">FUEL EFFICIENCY</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="cooling">
+          <strong data-template-id="upgrade-cooling" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">OVERHEAT RESISTANCE</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="alarm">
+          <strong data-template-id="upgrade-alarm" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ALARM RANGE</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+         <article class="upgrade" data-upgrade="auxiliary">
+          <strong data-template-id="upgrade-auxiliary" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUXILIARY SYSTEMS</strong><small class="detail"></small><button class="primary" type="button"></button>
+         </article>
+        </div>
+        <p id="shop-message" class="status" role="status"></p><button id="close-shop" data-template-id="close-shop" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">BACK TO MAP</button>
+       </div>
+      </div>
+      <div id="end-screen" class="overlay hidden">
+       <div data-template-id="end-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
+        <h2 id="end-title"></h2>
+        <p id="end-description"></p>
+        <div class="buttons"><button id="end-again" data-template-id="end-again" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY AGAIN</button> <button id="end-return" data-template-id="end-return" class="canva-button secondary hidden" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">WRÓĆ DO GRY</button>
+        </div>
+       </div>
+      </div>
+     </section>
+     <aside class="side" aria-label="Stan gry i sterowanie">
+      <div class="hud">
+       <div data-template-id="furnace-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="furnace-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">BOILER STATUS</span><strong id="furnace-value">100%</strong>
+        <div class="track" role="progressbar" aria-label="Stan pieca">
+         <div id="furnace-fill" class="fill"></div>
+        </div>
+       </div>
+       <div data-template-id="health-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="health-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">GUARDIAN</span><strong id="health-value">100%</strong>
+        <div class="track" role="progressbar" aria-label="Zdrowie strażnika">
+         <div id="health-fill" class="fill"></div>
+        </div>
+       </div>
+       <div data-template-id="energy-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="energy-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">ENERGIA</span><strong id="energy-value">100</strong>
+        <div class="track" role="progressbar" aria-label="Energia">
+         <div id="energy-fill" class="fill"></div>
+        </div>
+       </div>
+       <div data-template-id="heat-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="heat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WEAPON HEAT</span><strong id="heat-value">0%</strong>
+        <div class="track" role="progressbar" aria-label="Temperatura broni">
+         <div id="heat-fill" class="fill"></div>
+        </div>
+       </div>
+       <div data-template-id="score-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="score-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SCORE / SHIFT TARGET</span><strong id="score-value">0 / 3000</strong>
+       </div>
+       <div data-template-id="wallet-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="wallet-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SPENDABLE POINTS</span><strong id="wallet-value">0</strong>
+       </div>
+       <div data-template-id="wave-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="wave-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WAVE</span><strong id="wave-value">0</strong>
+       </div>
+       <div data-template-id="threat-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
+        <span data-template-id="threat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">THREAT LEVEL</span><strong id="threat-value">0</strong>
+       </div>
+      </div>
+      <div data-template-id="mission-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
+       <h2 data-template-id="mission-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 24px;">SHIFT REPORT</h2>
+       <p id="mission-info"></p>
+       <p id="stats-info"></p>
+      </div>
+      <div data-template-id="controls-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
+       <h2 data-template-id="controls-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 24px;">CONTROLS</h2>
+       <p data-template-id="controls-description" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">Defend the boiler, move between sectors, and open gates with E.</p>
+       <div class="buttons"><button id="fire-button" data-template-id="fire-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">STRZAŁ · J</button> <button id="shock-button" data-template-id="shock-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">FALA · Q</button> <button id="interact-button" data-template-id="interact-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INTERACT · E</button> <button id="shop-button" data-template-id="shop-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">SHOP · B</button> <button id="pause-button" data-template-id="pause-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">PAUSE</button> <button id="help-button" data-template-id="help-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INSTRUKCJA</button>
+       </div>
+       <div data-template-id="music-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
+        <h2 data-template-id="music-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 24px;">MUSIC</h2>
+        <p data-template-id="music-description" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">Choose an audio file or use your own music. Playback starts after interaction.</p>
+        <div class="buttons">
+         <button id="music-toggle" data-template-id="music-toggle" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY</button><button id="music-mute" data-template-id="music-mute" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">MUTE</button>
+        </div><label data-template-id="music-file-label" class="canva-text" for="music-file" style="color: rgb(217, 228, 217);"><span data-template-id="music-file-label-text" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">MUSIC FILE</span><input id="music-file" type="file" accept="audio/*"></label> <label data-template-id="music-volume-label" class="canva-text" for="music-volume" style="color: rgb(217, 228, 217);"><span data-template-id="music-volume-label-text" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">VOLUME</span><input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.45"></label>
+       </div>
+       <div class="quality">
+        <h3 data-template-id="quality-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 19px;">IMAGE QUALITY</h3><label for="reflections"><input id="reflections" type="checkbox" checked=""><span data-template-id="reflections-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Reflections on steel and puddles</span></label> <label for="shadows"><input id="shadows" type="checkbox" checked=""><span data-template-id="shadows-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Shadows</span></label> <label for="steam"><input id="steam" type="checkbox" checked=""><span data-template-id="steam-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">2D volumetric steam</span></label> <label for="performance"><input id="performance" type="checkbox"><span data-template-id="performance-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Performance mode</span></label> <label for="motion"><input id="motion" type="checkbox"><span data-template-id="motion-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Reduce motion effects</span></label> <label for="mute"><input id="mute" type="checkbox"><span data-template-id="mute-label" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Mute sound</span></label>
+       </div>
+      </div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <p data-template-id="safety-note" class="canva-text" style="font-size: 16px; color: rgb(180, 199, 192); margin: 0px; font-weight: 700; font-style: normal;">Fictional, bloodless combat: energy, stun effects, and colorful visuals. No realistic animal suffering.</p>
+     </aside>
+    </main>
+   </div>
+  </div>
+  <script>
+(() => {
+  const $=id=>document.getElementById(id),c=$("game"),g=c.getContext("2d"),m=$("minimap").getContext("2d");
+  const W=5200,F=430,G=1550,STEP=1/120,EXIT=5040,SHOP=580;
+  const zones=[["BOILER ROOM",0,850],["CONTROL ROOM",850,1500],["STORAGE",1500,2300],["WORKSHOP",2300,3100],["TECHNICAL CHANNELS",3100,3900],["TANKS",3900,4600],["EXIT",4600,5200]];
+  const blocks=[{x:840,y:365,w:100,h:65},{x:1190,y:350,w:95,h:80},{x:1750,y:370,w:110,h:60},{x:2160,y:355,w:95,h:75},{x:2650,y:365,w:100,h:65},{x:3370,y:350,w:100,h:80},{x:4060,y:365,w:105,h:65},{x:4640,y:360,w:95,h:70}];
+  const gates=[{x:1480,y:300,w:25,h:130,open:false},{x:3080,y:300,w:25,h:130,open:false},{x:4550,y:300,w:25,h:130,open:false}];
+  const nests=[1040,1940,2770,3650],keys=new Set(),touch=new Set(),q={reflections:true,shadows:true,steam:true,performance:false,motion:false,mute:false};
+  const definitions={
+    durability:["Durability",140,"+ maximum boiler status",16],
+    power:["Heating power",155,"+ energy damage",.23],
+    repair:["Automatic repair",165,"+ regeneration/s",.12],
+    armor:["Armor",170,"− boiler damage",.08],
+    fuel:["Fuel efficiency",145,"+ energy recovery/s",2.5],
+    cooling:["Overheat resistance",145,"+ cooling/s",3],
+    alarm:["Alarm range",125,"+ warning range",35],
+    auxiliary:["Auxiliary systems",160,"+ assistant work speed",.12]
+  };
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),rand=(a,b)=>a+Math.random()*(b-a),overlap=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
+  let hero,foes=[],shots=[],sparks=[],pigs=[],state="start",previous="start",wave=0,score=0,wallet=0,best=0,up={},purchases=0,furnace=100,saved=0,cam=0,clock=0,intermission=4,spawnRemaining=0,spawnTimer=0,noticeTimer=0,eventName="",objectiveName="",achieved=false,sequence=0,seqTimer=0,shockCd=0,uid=0,viewW=900,viewH=600,last=0,acc=0,audio,spriteImage=null,spriteUrl="";
+  const maxF=()=>100+up.durability*16*Math.pow(.93,up.durability/3);
+  const gain=(type)=>definitions[type][3]/Math.sqrt(1+up[type]*.42);
+  const cost=type=>Math.ceil(definitions[type][1]*Math.pow(1.34,up[type])/5)*5;
+  let musicCtx,musicSource,musicGain,musicBuffer,musicPlaying=false,musicMuted=false;
+  function startMusic(){if(!musicBuffer)return;musicCtx=musicCtx||new (window.AudioContext||window.webkitAudioContext)();if(musicCtx.state==="suspended")musicCtx.resume();if(musicPlaying)return;musicSource=musicCtx.createBufferSource();musicSource.buffer=musicBuffer;musicSource.loop=true;musicGain=musicGain||musicCtx.createGain();musicGain.gain.value=musicMuted?0:Number($("music-volume").value);musicSource.connect(musicGain).connect(musicCtx.destination);musicSource.start();musicPlaying=true;$("music-toggle").textContent="PAUSE"}
+  function stopMusic(){if(musicSource){try{musicSource.stop()}catch(_){}}musicSource=null;musicPlaying=false;$("music-toggle").textContent="PLAY"}
+  async function loadMusic(file){if(!file)return;musicCtx=musicCtx||new (window.AudioContext||window.webkitAudioContext)();musicBuffer=await musicCtx.decodeAudioData(await file.arrayBuffer());startMusic()}
+  function sound(freq=440,len=.07,kind="sine"){if(q.mute)return;try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume();const o=audio.createOscillator(),v=audio.createGain();o.type=kind;o.frequency.setValueAtTime(freq,audio.currentTime);o.frequency.exponentialRampToValueAtTime(Math.max(80,freq*.57),audio.currentTime+len);v.gain.setValueAtTime(.065,audio.currentTime);v.gain.exponentialRampToValueAtTime(.001,audio.currentTime+len);o.connect(v).connect(audio.destination);o.start();o.stop(audio.currentTime+len)}catch(_){}}
+  function resize(){let r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,q.performance?1:1.7);viewW=r.width;viewH=r.height;c.width=Math.max(1,Math.round(r.width*d));c.height=Math.max(1,Math.round(r.height*d));g.setTransform(d,0,0,d,0,0)}
+  addEventListener("resize",resize);resize();
+  function loadPigSprite(){const img=new Image();img.onload=()=>{spriteImage=img};img.src="pig.png"}
+  $("music-toggle").onclick=()=>musicPlaying?stopMusic():startMusic();$("music-mute").onclick=()=>{musicMuted=!musicMuted;if(musicGain)musicGain.gain.value=musicMuted?0:Number($("music-volume").value);$("music-mute").textContent=musicMuted?"UNMUTE":"MUTE"};$("music-volume").oninput=e=>{if(musicGain&&!musicMuted)musicGain.gain.value=Number(e.currentTarget.value)};$("music-file").onchange=e=>loadMusic(e.currentTarget.files[0]);loadPigSprite();
+  function drawPigSprite(x,y,w,h,face=1){if(!spriteImage)return;g.save();g.translate(x+(face<0?w:0),y);g.scale(face<0?-1:1,1);const ratio=Math.min(w/spriteImage.width,h/spriteImage.height),dw=spriteImage.width*ratio,dh=spriteImage.height*ratio;g.drawImage(spriteImage,(w-dw)/2,(h-dh)/2,dw,dh);g.restore()}
 
+  function show(text,d=2){$("notice").textContent=text;$("status").textContent=text;$("notice").classList.add("show");noticeTimer=d}
+  function particles(x,y,color,n=12){for(let i=0;i<(q.performance?Math.min(n,5):n)&&sparks.length<110;i++)sparks.push({x,y,vx:rand(-170,170),vy:rand(-200,10),life:rand(.2,.65),color})}
+  function addScore(n){score+=n;wallet+=n;best=Math.max(best,score);if(!achieved&&score>=3000){achieved=true;spawnRemaining=0;foes=[];intermission=0;sequence=0;seqTimer=0;furnace=Math.max(furnace,maxF()*.7);show("SHIFT TARGET REACHED: 3000 POINTS",2.6);sound(680,.35)}}
+  function reset(){
+    hero={x:330,y:F-62,w:29,h:62,vx:0,vy:0,face:1,hp:100,energy:100,heat:0,inv:0,fireCd:0,jumpBuffer:0,coyote:0,ground:true};
+    foes=[];shots=[];sparks=[];pigs=nests.map((x,i)=>({home:x,x,y:F-22,w:20,h:22,mode:"caged",id:i}));
+    gates.forEach(a=>a.open=false);Object.keys(definitions).forEach(k=>up[k]=0);
+    wave=0;score=0;wallet=0;purchases=0;furnace=100;saved=0;cam=0;clock=0;intermission=3;spawnRemaining=0;spawnTimer=0;achieved=false;sequence=0;seqTimer=0;shockCd=0;eventName="";objectiveName="";acc=0;state="play";keys.clear();touch.clear();
+    ["start-screen","pause-screen","help-screen","shop-screen","end-screen"].forEach(id=>$(id).classList.add("hidden"));
+    show("DEFEND THE BOILER · SHIFT TARGET: 3000 POINTS",2.5);startMusic();hud();c.focus()
+  }
+  function collision(o,dt){let dx=o.vx*dt,dy=o.vy*dt,n=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/5));o.ground=false;
+    for(let i=0;i<n;i++){let old=o.x;o.x=clamp(o.x+dx/n,0,W-o.w);for(let b of [...blocks,...gates.filter(a=>!a.open)])if(overlap(o,b)){if(dx>0&&old+o.w<=b.x+3){o.x=b.x-o.w;o.vx=0}else if(dx<0&&old>=b.x+b.w-3){o.x=b.x+b.w;o.vx=0}}
+      old=o.y;o.y+=dy/n;for(let b of blocks)if(overlap(o,b)){if(dy>=0&&old+o.h<=b.y+3){o.y=b.y-o.h;o.vy=0;o.ground=true}else if(dy<0&&old>=b.y+b.h-3){o.y=b.y+b.h;o.vy=0}}
+      if(o.y+o.h>=F){o.y=F-o.h;o.vy=0;o.ground=true}if(o.y<55){o.y=55;o.vy=0}
+    }
+  }
+  function nextWave(){if(achieved)return;wave++;intermission=0;spawnRemaining=Math.min(8+Math.floor(wave*1.55),32);spawnTimer=.25;eventName=["VALVE FAILURE","PRESSURE SURGE","FUEL SUPPLY BREAK","CONVEYOR SHIFT"][wave%4];objectiveName=["REPEL THE THREATS","CHECK THE GATES","RESCUE THE PIGLETS"][wave%3];show("WAVE "+wave+" · "+eventName,2.2);sound(290,.16)}
+  function spawn(){const type=Math.random()<Math.min(.46,wave*.045)?"helmet":Math.random()<.37?"fast":"normal",route=(wave+Math.floor(Math.random()*4))%4;
+    let x=[1050,2260,3530,4880][route]+rand(-90,90),h=type==="helmet"?55:48,w=type==="fast"?38:44;
+    foes.push({id:++uid,x,y:F-h,w,h,vx:0,vy:0,ground:true,face:-1,type,hp:(type==="helmet"?3:2)+Math.floor((wave-1)/5),stun:0,inv:0,attack:0});
+  }
+  function fire(){if(state!=="play"||hero.fireCd>0||hero.heat>=100||hero.energy<13)return;hero.fireCd=.18;hero.energy-=13;hero.heat=Math.min(110,hero.heat+22);shots.push({x:hero.x+hero.w/2+hero.face*24,y:hero.y+26,w:17,h:9,vx:hero.face*900,life:.7,dir:hero.face});particles(hero.x+hero.w/2+hero.face*26,hero.y+29,"#a7f0e9",5);sound(520,.055)}
+  function hit(e,dir){if(e.inv>0)return;e.hp-=1+up.power*.23/Math.sqrt(1+up.power*.34);e.inv=.13;e.stun=.5;e.vx=dir*270;e.vy=-190;particles(e.x+e.w/2,e.y+18,"#a7f0e9",12);sound(220,.08,"triangle");
+    if(e.hp<=0){e.dead=true;addScore(e.type==="helmet"?140:100);particles(e.x+e.w/2,e.y+20,"#f2ae91",20)}
+  }
+  function shock(){if(state!=="play"||shockCd>0)return;shockCd=Math.max(2.5,6-up.cooling*.13);foes.forEach(e=>{if(Math.abs(e.x-hero.x)<175&&Math.abs(e.y-hero.y)<100)hit(e,e.x<hero.x?-1:1)});particles(hero.x+15,F-20,"#d8ed82",24);show("ENERGY WAVE",.85);sound(170,.23)}
+  function interact(){if(state!=="play")return;
+    if(achieved&&Math.abs(hero.x-EXIT)<105){summary();return}
+    const gate=gates.find(a=>Math.abs(hero.x-a.x)<85);if(gate){gate.open=!gate.open;show(gate.open?"BRAMA OTWARTA":"BRAMA ZAMKNIĘTA",1);sound(190,.12);return}
+    const pig=pigs.find(a=>a.mode==="caged"&&Math.abs(hero.x-a.home)<85);if(pig){pig.mode="following";addScore(60);show("PIGLET IS FOLLOWING YOU",1.4);sound(600,.13);return}
+    if(Math.abs(hero.x-SHOP)<135){openShop();return}
+    show(achieved?"GO TO THE WORKER EXIT":"APPROACH A GATE, PIGLET, OR SHOP",1.5)
+  }
+  function openShop(){if(state!=="play")return;if(Math.abs(hero.x-SHOP)>145&&intermission<=0&&!achieved){show("THE SHOP IS AVAILABLE AT THE STATION OR BETWEEN WAVES",1.6);return}state="shop";keys.clear();touch.clear();$("shop-screen").classList.remove("hidden");$("shop-message").textContent="Purchases take effect immediately and remain active.";renderShop()}
+  function closeShop(){if(state!=="shop")return;state="play";$("shop-screen").classList.add("hidden");c.focus()}
+  function renderShop(){$("shop-balance").textContent="AVAILABLE POINTS: "+wallet;document.querySelectorAll("[data-upgrade]").forEach(card=>{let k=card.dataset.upgrade,v=gain(k),price=cost(k);card.querySelector(".detail").textContent="LEVEL "+up[k]+" → "+(up[k]+1)+" · "+definitions[k][2]+" "+(Number.isInteger(v)?v:v.toFixed(2));card.querySelector("button").textContent="BUY · "+price+" PKT"})}
+  function buy(k){if(state!=="shop")return;let price=cost(k);if(wallet<price){$("shop-message").textContent="NOT ENOUGH POINTS · Need "+(price-wallet)+" pkt.";sound(130,.09);return}
+    wallet-=price;const oldMax=maxF();up[k]++;purchases++;if(k==="durability")furnace+=maxF()-oldMax;
+    if(k==="repair")furnace=Math.min(maxF(),furnace+8);if(k==="fuel")hero.energy=Math.min(100,hero.energy+18);if(k==="cooling")hero.heat=Math.max(0,hero.heat-20);
+    $("shop-message").textContent="UPGRADED: "+definitions[k][0]+" · POZIOM "+up[k];sound(740,.13);renderShop();hud()
+  }
+  function summary(){stopMusic();state="summary";keys.clear();touch.clear();$("end-title").textContent="GOOD WORK";$("end-description").textContent="SHIFT COMPLETE · Score: "+score+" pkt · Fale: "+wave+" · Ulepszenia pieca: "+purchases+" · Uratowane warchlaki: "+saved+".";$("end-return").classList.remove("hidden");$("end-screen").classList.remove("hidden");sound(750,.3)}
+  function lose(){if(state!=="play")return;stopMusic();state="lost";keys.clear();touch.clear();$("end-title").textContent="SHIFT ABORTED";$("end-description").textContent="Score: "+score+" points · Waves: "+wave+". Try defending the boiler again.";$("end-return").classList.add("hidden");$("end-screen").classList.remove("hidden")}
+  function hud(){if(!hero)return;
+    const vals=[["furnace",furnace,maxF(),"%"],["health",hero.hp,100,"%"],["energy",hero.energy,100,""],["heat",hero.heat,100,"%"]];
+    vals.forEach(([id,value,max,suffix])=>{let el=$(id+"-value"),text=Math.ceil(value)+suffix;if(el.textContent!==text)el.textContent=text;$(id+"-fill").style.width=clamp(value/max*100,0,100)+"%";$(id+"-fill").parentElement.setAttribute("aria-valuenow",Math.ceil(value));$(id+"-fill").parentElement.setAttribute("aria-valuemax",Math.ceil(max))});
+    $("score-value").textContent=score+" / 3000";$("wallet-value").textContent=wallet;$("wave-value").textContent=wave;$("threat-value").textContent=achieved?"0":foes.length+spawnRemaining;
+    $("mission-info").textContent=achieved?"BOILER STABLE · YOU MAY EXIT":intermission>0?"BREAK · next wave in "+Math.ceil(intermission)+" s · open the shop":objectiveName+" · "+eventName;
+    $("stats-info").textContent="Piglets: "+saved+" · Upgrades: "+purchases+" · Best score this session: "+best+" · Alarm: "+Math.round(210+up.alarm*gain("alarm"))+" m";
+    $("objective").textContent=achieved?"SHIFT TARGET REACHED: 3000 POINTS · GO TO THE EXIT":("REACH 3000 POINTS · "+score+" / 3000 · WAVE "+wave);
+    const z=zones.find(a=>hero.x>=a[1]&&hero.x<a[2]);$("zone").textContent=z?z[0]:"WYJŚCIE";
+  }
+  function update(dt){
+    clock+=dt;hero.inv=Math.max(0,hero.inv-dt);hero.fireCd=Math.max(0,hero.fireCd-dt);hero.jumpBuffer=Math.max(0,hero.jumpBuffer-dt);shockCd=Math.max(0,shockCd-dt);
+    hero.heat=Math.max(0,hero.heat-(29+up.cooling*gain("cooling"))*dt);hero.energy=Math.min(100,hero.energy+(27+up.fuel*gain("fuel"))*dt);
+    let dir=Number(keys.has("d")||keys.has("arrowright")||touch.has("right"))-Number(keys.has("a")||keys.has("arrowleft")||touch.has("left"));
+    if(dir)hero.face=dir;let target=dir*(keys.has("shift")||touch.has("sprint")?340:245);hero.vx+=clamp(target-hero.vx,-2300*dt,2300*dt);
+    hero.coyote=hero.ground?.11:Math.max(0,hero.coyote-dt);if(hero.jumpBuffer>0&&hero.coyote>0){hero.vy=-620;hero.jumpBuffer=0;hero.coyote=0;sound(310,.06)}
+    hero.vy+=G*dt;collision(hero,dt);if(keys.has("j")||keys.has("k")||touch.has("fire"))fire();
+    if(!achieved){if(intermission>0){intermission-=dt;if(intermission<=0)nextWave()}else{
+      if(spawnRemaining>0){spawnTimer-=dt;if(spawnTimer<=0){spawn();spawnRemaining--;spawnTimer=Math.max(.4,1.6-wave*.035)*rand(.7,1.3)}}
+      if(spawnRemaining===0&&foes.length===0){intermission=5;addScore(80+Math.min(120,wave*10));show("WAVE CLEARED · SHOP OPEN",2);sound(640,.16)}
+    }}
+    shots=shots.filter(s=>{s.x+=s.vx*dt;s.life-=dt;if(s.life<=0||s.x<0||s.x>W||blocks.some(b=>overlap(s,b))||gates.some(a=>!a.open&&overlap(s,a)))return false;let victim=foes.find(e=>overlap(s,e));if(victim){hit(victim,s.dir);return false}return true});
+    for(const e of foes){if(e.dead)continue;e.inv=Math.max(0,e.inv-dt);e.stun=Math.max(0,e.stun-dt);e.attack=Math.max(0,e.attack-dt);
+      if(e.stun<=0){let target=Math.abs(hero.x-e.x)<270?hero.x:195;e.face=target<e.x?-1:1;e.vx=e.face*(e.type==="fast"?165:115)*(1+Math.min(.65,wave*.018));
+        let b=blocks.find(b=>e.face>0?b.x>=e.x+e.w-4&&b.x<e.x+e.w+32:b.x+b.w<=e.x+4&&b.x+b.w>e.x-32);if(b&&e.ground)e.vy=-Math.sqrt(2*G*(F-b.y+22));
+        let gate=gates.find(a=>!a.open&&Math.abs(e.x-a.x)<33);if(gate&&e.ground)e.vy=-670;
+      }else e.vx*=.94;
+      e.vy+=G*dt;collision(e,dt);
+      if(e.stun<=0&&overlap(e,hero)&&hero.inv<=0){hero.hp=Math.max(0,hero.hp-9);hero.inv=1;hero.vx=e.x<hero.x?240:-240;hero.vy=-235;particles(hero.x,hero.y+25,"#e8e1bb",7);show("FOAM KNOCKBACK",.8);if(hero.hp<=0)lose()}
+      if(e.stun<=0&&e.x<335&&e.x+e.w>115&&e.attack<=0){let reduction=Math.min(.72,up.armor*.08/Math.sqrt(1+up.armor*.22));furnace=Math.max(0,furnace-(6+Math.min(9,wave*.3))*(1-reduction));e.attack=1.4;e.stun=.3;particles(205,320,"#f3ba71",10);show("WARNING: BOILER UNDER ATTACK",.8);if(furnace<=0)lose()}
+    }
+    foes=foes.filter(e=>!e.dead&&e.x>-100&&e.x<W+100);
+    pigs.forEach((p,i)=>{if(p.mode!=="following")return;let target=hero.x-hero.face*(47+i*23);p.x+=clamp(target-p.x,-210*dt,210*dt);if(p.x<380&&hero.x<380){p.mode="saved";saved++;addScore(220);particles(p.x,F-25,"#d8ed82",18);show("PIGLET SAFE",1.4)}});
+    furnace=Math.min(maxF(),furnace+(up.repair*gain("repair")+(.16+up.auxiliary*gain("auxiliary")))*(achieved?3:1)*dt);
+    if(achieved&&sequence<3){seqTimer+=dt;if(seqTimer>2.5){seqTimer=0;sequence++;show(["","BOILER STABLE","SHIFT COMPLETE","YOU MAY EXIT"][sequence],2.3)}}
+    cam+=(clamp(hero.x-viewW*.38,0,Math.max(0,W-viewW))-cam)*Math.min(1,dt*7);
+    if(noticeTimer>0){noticeTimer-=dt;if(noticeTimer<=0)$("notice").classList.remove("show")}
+    hud()
+  }
+  function rect(x,y,w,h,color){g.fillStyle=color;g.fillRect(x,y,w,h)}
+  function oval(x,y,rx,ry,color){g.fillStyle=color;g.beginPath();g.ellipse(x,y,rx,ry,0,0,Math.PI*2);g.fill()}
+  function grad(x,y,w,h,a,b){let z=g.createLinearGradient(x,y,x+w,y+h);z.addColorStop(0,a);z.addColorStop(1,b);return z}
+  function text(t,x,y,size=12,color="#dbe4d4"){g.fillStyle=color;g.font="bold "+size+"px Space Mono";g.fillText(t,x,y)}
+  function draw(){
+    g.clearRect(0,0,viewW,viewH);let scale=Math.min(1,viewH/520),off=viewH-F*scale-58;
+    g.save();g.translate(0,off);g.scale(1,scale);
+    rect(0,-230,viewW,780,grad(0,-230,0,780,"#0b171d","#263534"));
+    // Mur, zabrudzenia i spoiny są deterministyczne: wygląd nie migocze pomiędzy klatkami.
+    for(let x=-((cam*.13)%290)-290;x<viewW+290;x+=290){rect(x,35,288,355,"#29393a");for(let row=0;row<13;row++)for(let bx=x-70+(row%2)*37;bx<x+310;bx+=74){let shade=(row*17+Math.floor(bx)*7)%3;rect(bx,54+row*25,71,22,["#374541","#40504a","#32413f"][shade]);rect(bx+4,57+row*25,42,2,"#a8b2a01a")}rect(x+135,39,20,343,"#15292e")}
+    g.translate(-cam,0);
+    rect(0,F,W,150,grad(0,F,0,150,"#475451","#172328"));rect(0,F,W,5,"#89958a");
+    let low=Math.floor(cam/85)*85,high=cam+viewW+100;
+    for(let x=low;x<high;x+=85){rect(x,F+32,76,2,"#71807644");rect(x+18,F+5,2,115,"#08161955");if(q.reflections&&!q.performance){oval(x+35,F+40,27,4,"#b7d9ca24");rect(x+23,F+38,30,1,"#cfdfd088")}}
+    for(let x=Math.floor(cam/350)*350;x<high;x+=350){rect(x,110,255,15,grad(x,110,255,0,"#91a299","#1b3034"));rect(x+29,123,17,170,"#374f51");rect(x+213,123,13,200,"#334d50");rect(x+8,112,240,2,"#d1d9c166")}
+    zones.forEach(([name,start,end],i)=>{if(end<cam-100||start>high)return;rect(start+25,73,Math.min(end-start-48,310),36,"#1a292c");rect(start+28,76,Math.min(end-start-54,304),30,"#45534c");text(name,start+40,97,13,"#e0e5d4");if(i>0){rect(start,112,13,318,"#17272c");rect(start+4,112,3,318,"#7e8d7b55")}});
+    // Betonowe kanały, blachy, rdza, rurociągi i taśmociągi budują czytelną mapę.
+    for(const x of [1020,1970,2910,3750]){rect(x,F-16,380,15,"#181f20");for(let j=0;j<9;j++){rect(x+j*43,F-17,31,3,"#977453");rect(x+j*43+4,F-13,25,2,"#697d78")}}
+    for(const x of [1640,3910,4270]){rect(x,226,110,200,grad(x,226,110,200,"#87928a","#263b3e"));oval(x+55,225,55,15,"#a7aaa0");rect(x+15,251,9,143,"#9b684a");rect(x+73,251,4,157,"#d5d2ad55");text("TNK",x+28,307,20)}
+    for(const x of [2510,2730]){rect(x,302,150,105,"#394a47");rect(x+8,315,130,50,"#22353a");rect(x+15,323,43,27,"#779a91");rect(x+102,326,24,21,"#b77552");rect(x+8,394,130,10,"#9a7759")}
+    blocks.forEach(b=>{if(b.x>high||b.x+b.w<cam)return;if(q.shadows)rect(b.x+9,b.y+8,b.w,b.h,"#020b0b77");rect(b.x,b.y,b.w,b.h,grad(b.x,b.y,b.w,b.h,"#a5987d","#3f4e4a"));rect(b.x+6,b.y+7,b.w-12,b.h-11,"#605f52");rect(b.x+8,b.y+8,b.w-16,3,"#d7c6a16c");for(let k=0;k<3;k++)oval(b.x+14+k*30,b.y+8,2,2,"#1b2929")});
+    gates.forEach(a=>{if(a.x>high||a.x<cam-50)return;rect(a.x-6,286,37,144,"#243438");rect(a.x,a.open?286:305,25,a.open?12:125,a.open?"#648773":"#75867c");for(let y=315;y<425&&!a.open;y+=23)rect(a.x+4,y,17,3,"#25383b");text(a.open?"OPEN":"GATE",a.x-20,276,10,a.open?"#d8ed82":"#f3ba71")});
+    if(q.steam&&!q.performance){for(let x=Math.floor(cam/460)*460;x<high;x+=460){let z=x+110;for(let i=0;i<4;i++)oval(z+Math.sin(clock*.55+i)*12,F-125-i*35-(clock*8+i*19)%25,19+i*5,29,"#c7ded012")}}
+    if(q.shadows)oval(214,402,125,13,"#010809aa");
+    rect(104,238,224,153,grad(104,238,224,153,"#b2b8a3","#24383d"));rect(116,219,198,25,grad(116,219,198,25,"#dae0c1","#425d61"));rect(131,257,172,110,"#26383b");
+    rect(151,279,70,70,grad(151,279,70,70,"#244243",achieved?"#91c77f":"#df965c"));rect(237,290,42,8,"#a68d6c");
+    if(q.reflections&&!q.performance){rect(132,262,165,2,"#d9e1d088");oval(206,F+32,80,6,"#e6b98329")}
+    text("BOILER",159,252,19);rect(128,383,175,12,"#1a282a");
+    rect(292,326,32,43,"#576c63");oval(307,311,19,19,"#bca082");rect(296,345,9,51,"#23383c");rect(314,345,9,51,"#23383c");text("+",296,343,21,"#d8ed82");
+    rect(SHOP,277,113,153,grad(SHOP,277,113,153,"#718179","#1d3033"));rect(SHOP+9,291,95,40,"#d8ed82");text("SHOP",SHOP+20,317,15,"#172621");rect(SHOP+22,358,68,68,"#263a3a");text("E",SHOP+49,394,18);
+    rect(EXIT-21,276,92,154,achieved?"#4e6385":"#293c3c");rect(EXIT-11,286,72,136,achieved?"#19392b":"#1a2b30");rect(EXIT+42,351,6,6,"#e9d9a5");text("EXIT",EXIT-22,262,13,achieved?"#d8ed82":"#a7b9ae");if(achieved)text("E",EXIT+12,343,24,"#d8ed82");
+    pigs.forEach(p=>{if(p.mode==="saved"||p.x<cam-90||p.x>high)return;if(p.mode==="caged"){rect(p.home-26,F-65,53,65,"#364a4a");for(let j=-18;j<22;j+=13)rect(p.home+j,F-59,4,55,"#9ba9a0");text("E",p.home-5,F-74,13,"#d8ed82")}
+      drawPigSprite(p.x,F-38,29,28,p.x<hero.x?-1:1);if(p.mode==="following")text("♥",p.x+3,F-42,14,"#d8ed82")});
+    foes.forEach(e=>{if(e.x<cam-90||e.x>high)return;let x=e.x+e.w/2;if(q.shadows)oval(x,F,25,4,"#0009");drawPigSprite(e.x,e.y,e.w,e.h,e.face);if(e.type==="helmet"){rect(x-23,e.y+10,45,4,"#99b3a7")}if(e.stun>0)text("✦",x-5,e.y-13,15,"#a7f0e9")});
+    if(q.shadows)oval(hero.x+14,F,20,4,"#0009");g.save();g.translate(hero.x+14,hero.y);g.scale(hero.face,1);if(hero.inv>0&&Math.floor(clock*14)%2)g.globalAlpha=.6;
+    rect(-12,45,11,17,"#213236");rect(4,45,11,17,"#213236");rect(-17,18,35,36,grad(-17,18,35,36,"#8b9e84","#283f3d"));oval(0,5,16,20,"#c8a082");oval(-1,-11,19,11,"#465a4c");rect(-20,-16,41,5,"#98a287");oval(2,4,2,2,"#17272a");oval(-2,19,10,6,"#d1c7ad");rect(11,27,43,11,grad(11,27,43,11,"#9db7af","#1e3d47"));rect(46,24,9,17,"#83aea9");oval(33,32,7,4,"#8cddd5");g.restore();
+    shots.forEach(s=>{oval(s.x+8,s.y+4,15,6,"#8cddd5");oval(s.x+8,s.y+4,6,3,"#fff")});
+    sparks.forEach(p=>rect(p.x,p.y,4,4,p.color));
+    g.restore();
+    m.fillStyle="#0f2023";m.fillRect(0,0,360,130);m.fillStyle="#556a64";m.fillRect(8,64,344,16);
+    const px=x=>8+x/W*344;m.fillStyle="#d8ed82";m.fillRect(px(120),59,16,26);m.fillStyle=achieved?"#d8ed82":"#849493";m.fillRect(px(EXIT),54,8,34);
+    m.fillStyle="#f3ba71";blocks.forEach(b=>m.fillRect(px(b.x),60,7,6));gates.forEach(a=>{if(!a.open)m.fillRect(px(a.x),53,3,31)});
+    m.fillStyle="#f0b0a8";foes.forEach(e=>m.fillRect(px(e.x),70,4,7));m.fillStyle="#eee2cb";pigs.filter(p=>p.mode==="caged").forEach(p=>m.fillRect(px(p.x),48,5,9));
+    m.fillStyle="#a7f0e9";m.fillRect(px(hero.x)-4,54,8,27);m.strokeStyle="#eee6d6";m.strokeRect(px(cam),33,Math.min(344,viewW/W*344),64)
+  }
+  function frame(t){requestAnimationFrame(frame);let dt=Math.min((t-last)/1000||0,.05);last=t;if(state==="play"){acc=Math.min(acc+dt,.1);while(acc>=STEP&&state==="play"){update(STEP);acc-=STEP}}
+    if(state==="play"||state==="summary")sparks=sparks.filter(p=>{p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=370*dt;return p.life>0});
+    draw()
+  }
+  function pause(){if(state==="play"){state="pause";keys.clear();touch.clear();$("pause-screen").classList.remove("hidden")}else if(state==="pause"){state="play";$("pause-screen").classList.add("hidden");c.focus()}}
+  function help(){if(state==="help")return;previous=state;state="help";keys.clear();touch.clear();$("help-screen").classList.remove("hidden")}
+  function closeHelp(){state=previous;$("help-screen").classList.add("hidden");if(state==="play")c.focus()}
+  function jump(){if(state==="play")hero.jumpBuffer=.14}
+  const controlled=new Set(["a","d","w","arrowleft","arrowright","arrowup"," ","shift","j","k","q","e","b","p","escape","f3"]);
+  document.addEventListener("keydown",e=>{if(e.target instanceof HTMLInputElement)return;let k=e.key.toLowerCase();if(controlled.has(k))e.preventDefault();
+    if(k==="f3"){document.body.classList.toggle("debug-hitboxes");show(document.body.classList.contains("debug-hitboxes")?"HITBOXES: ON":"HITBOXY: OFF",1);return}
+    if(state==="shop"){if(k==="escape"||k==="b")closeShop();return}if(state==="help"){if(k==="escape")closeHelp();return}
+    if(k==="p"||k==="escape"){if(state==="play"||state==="pause")pause();return}if(state!=="play")return;
+    keys.add(k);if(e.repeat)return;if(["w","arrowup"," "].includes(k))jump();if(k==="j"||k==="k")fire();if(k==="q")shock();if(k==="e")interact();if(k==="b")openShop()
+  });
+  document.addEventListener("keyup",e=>keys.delete(e.key.toLowerCase()));
+  addEventListener("blur",()=>{keys.clear();touch.clear();if(state==="play")pause()});
+  document.querySelectorAll("[data-hold]").forEach(b=>{b.addEventListener("pointerdown",e=>{e.preventDefault();b.setPointerCapture(e.pointerId);touch.add(b.dataset.hold);b.classList.add("pressed");if(b.dataset.hold==="fire")fire()});["pointerup","pointercancel","lostpointercapture"].forEach(type=>b.addEventListener(type,()=>{touch.delete(b.dataset.hold);b.classList.remove("pressed")}))});
+  document.querySelectorAll("[data-action]").forEach(b=>b.addEventListener("pointerdown",e=>{e.preventDefault();({jump,shock,interact,shop:openShop})[b.dataset.action]()}));
+  $("start-button").onclick=reset;$("end-again").onclick=reset;$("end-return").onclick=()=>{if(state!=="summary")return;state="play";$("end-screen").classList.add("hidden");hero.x=EXIT-110;c.focus()};
+  $("fire-button").onclick=fire;$("shock-button").onclick=shock;$("interact-button").onclick=interact;$("shop-button").onclick=openShop;$("close-shop").onclick=closeShop;
+  $("pause-button").onclick=pause;$("resume-button").onclick=pause;$("help-button").onclick=help;$("close-help").onclick=closeHelp;
+  document.querySelectorAll("[data-upgrade]").forEach(card=>card.querySelector("button").onclick=()=>buy(card.dataset.upgrade));
+  Object.keys(q).forEach(k=>$(k).addEventListener("change",e=>{q[k]=e.currentTarget.checked;if(k==="performance")resize();$("status").textContent="Ustawienia zastosowane."}));
+  hero={x:330,y:F-62,w:29,h:62,vx:0,vy:0,face:1,hp:100,energy:100,heat:0,inv:0,fireCd:0};
+  pigs=nests.map((x,i)=>({home:x,x,y:F-22,w:20,h:22,mode:"caged",id:i}));
+  Object.keys(definitions).forEach(k=>up[k]=0);
+  hud();requestAnimationFrame(frame);
+  // Kontury debugowania są rysowane po zwykłej scenie, bez zmiany kolizji.
+  const drawBase=draw;
+  draw=function(){drawBase();if(!document.body.classList.contains("debug-hitboxes"))return;let scale=Math.min(1,viewH/520),off=viewH-F*scale-58;m.save();m.restore();g.save();g.translate(-cam,off);g.scale(1,scale);g.lineWidth=2;
+    const outline=(o,color)=>{g.strokeStyle=color;g.strokeRect(o.x,o.y,o.w,o.h)};
+    blocks.forEach(b=>outline(b,"#f4c46c"));gates.filter(a=>!a.open).forEach(a=>outline(a,"#ff7b68"));outline(hero,"#8fffe4");foes.forEach(e=>outline(e,"#ff9f9f"));shots.forEach(s=>outline(s,"#92deff"));pigs.filter(p=>p.mode!=="saved").forEach(p=>outline(p,"#f8f5ab"));
+    outline({x:EXIT-105,y:260,w:210,h:170},"#d8ed82");g.restore()
+  };
+})();
+</script>
+ 
+</body></html>
