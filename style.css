@@ -211,3 +211,27 @@ animation:blink 1s step-end infinite;
 @keyframes blink {
 50% {opacity:0;}
 }
+
+.nav a.pig-btn {
+    color: #ffb6d9;
+    border: 1px solid rgba(255, 182, 217, 0.65);
+    background: rgba(255, 105, 180, 0.06);
+    text-shadow: 0 0 5px rgba(255, 182, 217, 0.45);
+    box-shadow:
+        0 0 5px rgba(255, 182, 217, 0.15),
+        inset 0 0 5px rgba(255, 182, 217, 0.05);
+    transition: all 0.25s ease;
+}
+
+.nav a.pig-btn:hover {
+    color: #ffffff;
+    border-color: #ffb6d9;
+    background: rgba(255, 105, 180, 0.15);
+    text-shadow:
+        0 0 5px #ffb6d9,
+        0 0 12px #ff69b4;
+    box-shadow:
+        0 0 8px rgba(255, 182, 217, 0.5),
+        0 0 18px rgba(255, 105, 180, 0.3),
+        inset 0 0 8px rgba(255, 182, 217, 0.1);
+}
