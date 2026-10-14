@@ -55,31 +55,28 @@
      </div><span data-template-id="header-tag" class="canva-tag badge" style="background: rgb(25, 27, 44); color: rgb(130, 137, 237); font-weight: 700; font-style: normal; font-size: 17px;">BOILER DEFENSE · ENDLESS MODE</span>
     </header>
     <main class="layout">
-     <section class="stage" aria-label="Gra: obrona pieca w zakładzie przemysłowym">
-      <canvas id="game" tabindex="0" role="img" aria-label="Przewijana mapa zakładu z piecem, przeciwnikami, warchlakami i wyjściem"></canvas>
-      <div class="stage-top">
-       <span data-template-id="stage-tag" class="canva-tag badge" style="background: rgb(16, 30, 32); color: rgb(216, 237, 130); font-weight: 700; font-style: normal; font-size: 16px;">● KOTŁOWNIA / SEKTOR PRODUKCYJNY</span><span id="zone" class="badge">BOILER ROOM</span>
+     <section class="stage" aria-label="Boiler defense game in an industrial plant">
+      <canvas id="game" tabindex="0" role="img" aria-label="Scrolling plant map with a boiler, enemies, piglets, and an exit"></canvas>
+      <div class="stage-top"><span data-template-id="stage-tag" class="canva-tag badge" style="background: rgb(16, 30, 32); color: rgb(216, 237, 130); font-weight: 700; font-style: normal; font-size: 16px;">● KOTŁOWNIA / SEKTOR PRODUKCYJNY</span><span id="zone" class="badge">BOILER ROOM</span>
       </div>
       <div id="notice" aria-live="assertive"></div>
       <div class="stage-bottom">
        <div id="objective" class="objective" aria-live="polite"></div>
        <div class="mapbox">
-        <canvas id="minimap" width="360" height="130" role="img" aria-label="Minimapa zakładu"></canvas>
+        <canvas id="minimap" width="360" height="130" role="img" aria-label="Plant minimap"></canvas>
        </div>
       </div>
-      <div class="touch" aria-label="Sterowanie dotykowe">
-       <div class="touch-group left">
-        <button type="button" data-hold="left" aria-label="W lewo">◀</button><button type="button" data-hold="right" aria-label="W prawo">▶</button><button type="button" data-hold="sprint" aria-label="Bieg">BIEG</button>
+      <div class="touch" aria-label="Touch controls">
+       <div class="touch-group left"><button type="button" data-hold="left" aria-label="Move left">◀</button><button type="button" data-hold="right" aria-label="Move right">▶</button><button type="button" data-hold="sprint" aria-label="Sprint">BIEG</button>
        </div>
-       <div class="touch-group right">
-        <button type="button" data-action="jump">SKOK</button><button type="button" data-hold="fire">STRZAŁ</button><button type="button" data-action="shock">FALA</button><button type="button" data-action="interact">E</button><button type="button" data-action="shop">SKLEP</button>
+       <div class="touch-group right"><button type="button" data-action="jump">SKOK</button><button type="button" data-hold="fire">STRZAŁ</button><button type="button" data-action="shock">FALA</button><button type="button" data-action="interact">E</button><button type="button" data-action="shop">SKLEP</button>
        </div>
       </div>
       <div id="start-screen" class="overlay">
        <div data-template-id="start-card" class="canva-card modal" style="background: rgb(25, 27, 44);">
         <p data-template-id="start-kicker" class="canva-text mono" style="color: rgb(243, 186, 113); font-weight: 700; font-style: normal; font-size: 12px;">TECHNICAL SECURITY SHIFT</p>
         <h2 data-template-id="start-title" class="canva-text" style="color: rgb(130, 150, 237); font-weight: 900; font-style: normal; font-size: 24px;">DEFEND THE BOILER. COMPLETE THE SHIFT.</h2>
-        <p data-template-id="start-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Earn 3000 points by fighting off the fictional comic pigs and rescuing the piglets. Upgrade the boiler between waves. After reaching the goal, go to the employee exit and press E. A/D: move · W: jump · J: shoot · Q: wave · B: shop.</p><button id="start-button" data-template-id="start-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">START GAME</button>
+        <p data-template-id="start-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Earn 50,000 points by fighting off the fictional comic pigs and rescuing the piglets. Upgrade the boiler between waves. After reaching the goal, go to the employee exit and press E. A/D: MOVE · W: JUMP · J: SHOOT · Q: WAVE · B: SHOP · E: EXIT.</p><button id="start-button" data-template-id="start-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">START GAME</button>
        </div>
       </div>
       <div id="pause-screen" class="overlay hidden">
@@ -91,39 +88,31 @@
       <div id="help-screen" class="overlay hidden">
        <div data-template-id="help-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
         <h2 data-template-id="help-title" class="canva-text" style="color: rgb(216, 237, 130); font-weight: 900; font-style: normal; font-size: 24px;">INSTRUCTIONS</h2>
-        <p data-template-id="help-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Energy shots repel fictional enemies without graphic injury. Free the piglets from their cages and lead them to the boiler room. Open gates with interact. The shop is available at the station and between waves. Points spent in the shop do not reduce progress toward the 3000-point target.</p>
-        <p data-template-id="help-keys" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">A/D lub ←/→ — ruch · Shift — bieg · W/↑/Spacja — skok · J/K — strzał · Q — fala · E — interakcja · B — sklep · P/Esc — pauza · F3 — hitboxy. Dotyk: przyciski na scenie.</p><button id="close-help" data-template-id="close-help" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">CLOSE INSTRUCTIONS</button>
+        <p data-template-id="help-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Energy shots repel fictional enemies without graphic injury. Free the piglets from their cages and lead them to the boiler room. Open gates with interact. The shop is available at the station and between waves. Points spent in the shop do not reduce progress toward the 50,000-point target.</p>
+        <p data-template-id="help-keys" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">A/D or ←/→ — MOVE · Shift — SPRINT · W/↑/Space — JUMP · J/K — SHOOT · Q — WAVE · E — INTERACT / EXIT · B — SHOP · P/Esc — PAUSE · F3 — DEBUG HITBOXES. Touch: on-screen buttons.</p><button id="close-help" data-template-id="close-help" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">CLOSE INSTRUCTIONS</button>
        </div>
       </div>
       <div id="shop-screen" class="overlay hidden">
        <div data-template-id="shop-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
         <p data-template-id="shop-kicker" class="canva-text mono" style="color: rgb(243, 186, 113); font-weight: 700; font-style: normal; font-size: 12px;">SYSTEM UPGRADES</p>
         <h2 data-template-id="shop-title" class="canva-text" style="color: rgb(216, 237, 130); font-weight: 900; font-style: normal; font-size: 24px;">BOILER UPGRADES</h2>
-        <p data-template-id="shop-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Każda gałąź ma kolejne poziomy. Ceny rosną, a przyrosty stopniowo maleją. Zakupy nie resetują fal ani postępu zmiany.</p><strong id="shop-balance" aria-live="polite"></strong>
+        <p data-template-id="shop-description" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">Each branch has multiple levels. Prices rise while gains gradually decrease. Purchases do not reset waves or shift progress.</p><strong id="shop-balance" aria-live="polite"></strong>
         <div class="upgrade-grid" id="upgrade-grid">
-         <article class="upgrade" data-upgrade="durability">
-          <strong data-template-id="upgrade-durability" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">BOILER DURABILITY</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="durability"><strong data-template-id="upgrade-durability" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">BOILER DURABILITY</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="power">
-          <strong data-template-id="upgrade-power" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">HEATING POWER</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="power"><strong data-template-id="upgrade-power" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">HEATING POWER</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="repair">
-          <strong data-template-id="upgrade-repair" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUTOMATIC REPAIR</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="repair"><strong data-template-id="upgrade-repair" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUTOMATIC REPAIR</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="armor">
-          <strong data-template-id="upgrade-armor" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ARMOR</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="armor"><strong data-template-id="upgrade-armor" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ARMOR</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="fuel">
-          <strong data-template-id="upgrade-fuel" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">FUEL EFFICIENCY</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="fuel"><strong data-template-id="upgrade-fuel" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">FUEL EFFICIENCY</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="cooling">
-          <strong data-template-id="upgrade-cooling" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">OVERHEAT RESISTANCE</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="cooling"><strong data-template-id="upgrade-cooling" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">OVERHEAT RESISTANCE</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="alarm">
-          <strong data-template-id="upgrade-alarm" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ALARM RANGE</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="alarm"><strong data-template-id="upgrade-alarm" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">ALARM RANGE</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
-         <article class="upgrade" data-upgrade="auxiliary">
-          <strong data-template-id="upgrade-auxiliary" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUXILIARY SYSTEMS</strong><small class="detail"></small><button class="primary" type="button"></button>
+         <article class="upgrade" data-upgrade="auxiliary"><strong data-template-id="upgrade-auxiliary" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 16px;">AUXILIARY SYSTEMS</strong><small class="detail"></small><button class="primary" type="button"></button>
          </article>
         </div>
         <p id="shop-message" class="status" role="status"></p><button id="close-shop" data-template-id="close-shop" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">BACK TO MAP</button>
@@ -133,48 +122,41 @@
        <div data-template-id="end-card" class="canva-card modal" style="background: rgb(25, 43, 44);">
         <h2 id="end-title"></h2>
         <p id="end-description"></p>
-        <div class="buttons"><button id="end-again" data-template-id="end-again" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY AGAIN</button> <button id="end-return" data-template-id="end-return" class="canva-button secondary hidden" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">WRÓĆ DO GRY</button>
+        <div class="buttons">
+         <button id="end-again" data-template-id="end-again" class="canva-button primary" type="button" style="background: rgb(216, 237, 130); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY AGAIN</button> <button id="end-return" data-template-id="end-return" class="canva-button secondary hidden" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">WRÓĆ DO GRY</button>
         </div>
        </div>
       </div>
      </section>
-     <aside class="side" aria-label="Stan gry i sterowanie">
+     <aside class="side" aria-label="Game status and controls">
       <div class="hud">
-       <div data-template-id="furnace-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="furnace-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">BOILER STATUS</span><strong id="furnace-value">100%</strong>
+       <div data-template-id="furnace-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="furnace-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">BOILER STATUS</span><strong id="furnace-value">100%</strong>
         <div class="track" role="progressbar" aria-label="Stan pieca">
          <div id="furnace-fill" class="fill"></div>
         </div>
        </div>
-       <div data-template-id="health-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="health-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">GUARDIAN</span><strong id="health-value">100%</strong>
+       <div data-template-id="health-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="health-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">GUARDIAN</span><strong id="health-value">100%</strong>
         <div class="track" role="progressbar" aria-label="Zdrowie strażnika">
          <div id="health-fill" class="fill"></div>
         </div>
        </div>
-       <div data-template-id="energy-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="energy-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">ENERGIA</span><strong id="energy-value">100</strong>
+       <div data-template-id="energy-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="energy-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">ENERGIA</span><strong id="energy-value">100</strong>
         <div class="track" role="progressbar" aria-label="Energia">
          <div id="energy-fill" class="fill"></div>
         </div>
        </div>
-       <div data-template-id="heat-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="heat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WEAPON HEAT</span><strong id="heat-value">0%</strong>
+       <div data-template-id="heat-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="heat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WEAPON HEAT</span><strong id="heat-value">0%</strong>
         <div class="track" role="progressbar" aria-label="Temperatura broni">
          <div id="heat-fill" class="fill"></div>
         </div>
        </div>
-       <div data-template-id="score-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="score-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SCORE / SHIFT TARGET</span><strong id="score-value">0 / 3000</strong>
+       <div data-template-id="score-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="score-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SCORE / SHIFT TARGET</span><strong id="score-value">0 / 3000</strong>
        </div>
-       <div data-template-id="wallet-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="wallet-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SPENDABLE POINTS</span><strong id="wallet-value">0</strong>
+       <div data-template-id="wallet-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="wallet-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">SPENDABLE POINTS</span><strong id="wallet-value">0</strong>
        </div>
-       <div data-template-id="wave-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="wave-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WAVE</span><strong id="wave-value">0</strong>
+       <div data-template-id="wave-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="wave-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">WAVE</span><strong id="wave-value">0</strong>
        </div>
-       <div data-template-id="threat-card" class="canva-card metric" style="background: rgb(25, 27, 44);">
-        <span data-template-id="threat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">THREAT LEVEL</span><strong id="threat-value">0</strong>
+       <div data-template-id="threat-card" class="canva-card metric" style="background: rgb(25, 27, 44);"><span data-template-id="threat-label" class="canva-text metric-label" style="color: rgb(174, 197, 185); font-weight: 700; font-style: normal; font-size: 16px;">THREAT LEVEL</span><strong id="threat-value">0</strong>
        </div>
       </div>
       <div data-template-id="mission-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
@@ -185,13 +167,13 @@
       <div data-template-id="controls-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
        <h2 data-template-id="controls-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 24px;">CONTROLS</h2>
        <p data-template-id="controls-description" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">Defend the boiler, move between sectors, and open gates with E.</p>
-       <div class="buttons"><button id="fire-button" data-template-id="fire-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">STRZAŁ · J</button> <button id="shock-button" data-template-id="shock-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">FALA · Q</button> <button id="interact-button" data-template-id="interact-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INTERACT · E</button> <button id="shop-button" data-template-id="shop-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">SHOP · B</button> <button id="pause-button" data-template-id="pause-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">PAUSE</button> <button id="help-button" data-template-id="help-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INSTRUKCJA</button>
+       <div class="buttons">
+        <button id="fire-button" data-template-id="fire-button" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">STRZAŁ · J</button> <button id="shock-button" data-template-id="shock-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">FALA · Q</button> <button id="interact-button" data-template-id="interact-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INTERACT · E</button> <button id="shop-button" data-template-id="shop-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">SHOP · B</button> <button id="pause-button" data-template-id="pause-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">PAUSE</button> <button id="help-button" data-template-id="help-button" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">INSTRUKCJA</button>
        </div>
        <div data-template-id="music-panel" class="canva-panel panel" style="background: rgb(25, 27, 44);">
         <h2 data-template-id="music-title" class="canva-text" style="color: rgb(244, 240, 226); font-weight: 900; font-style: normal; font-size: 24px;">MUSIC</h2>
         <p data-template-id="music-description" class="canva-text" style="color: rgb(180, 199, 192); font-weight: 700; font-style: normal; font-size: 16px;">Choose an audio file or use your own music. Playback starts after interaction.</p>
-        <div class="buttons">
-         <button id="music-toggle" data-template-id="music-toggle" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY</button><button id="music-mute" data-template-id="music-mute" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">MUTE</button>
+        <div class="buttons"><button id="music-toggle" data-template-id="music-toggle" class="canva-button primary" type="button" style="background: rgb(130, 150, 237); color: rgb(24, 34, 29); font-weight: 900; font-style: normal; font-size: 16px;">PLAY</button><button id="music-mute" data-template-id="music-mute" class="canva-button secondary" type="button" style="background: rgb(48, 72, 74); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 16px;">MUTE</button>
         </div><label data-template-id="music-file-label" class="canva-text" for="music-file" style="color: rgb(217, 228, 217);"><span data-template-id="music-file-label-text" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">MUSIC FILE</span><input id="music-file" type="file" accept="audio/*"></label> <label data-template-id="music-volume-label" class="canva-text" for="music-volume" style="color: rgb(217, 228, 217);"><span data-template-id="music-volume-label-text" class="canva-text" style="color: rgb(217, 228, 217); font-weight: 700; font-style: normal; font-size: 16px;">VOLUME</span><input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.45"></label>
        </div>
        <div class="quality">
@@ -236,18 +218,18 @@
   addEventListener("resize",resize);resize();
   function loadPigSprite(){const img=new Image();img.onload=()=>{spriteImage=img};img.src="pig.png"}
   $("music-toggle").onclick=()=>musicPlaying?stopMusic():startMusic();$("music-mute").onclick=()=>{musicMuted=!musicMuted;if(musicGain)musicGain.gain.value=musicMuted?0:Number($("music-volume").value);$("music-mute").textContent=musicMuted?"UNMUTE":"MUTE"};$("music-volume").oninput=e=>{if(musicGain&&!musicMuted)musicGain.gain.value=Number(e.currentTarget.value)};$("music-file").onchange=e=>loadMusic(e.currentTarget.files[0]);loadPigSprite();
-  function drawPigSprite(x,y,w,h,face=1){if(!spriteImage)return;const visualW=w*1.35,visualH=h*1.35;g.save();g.translate(x+w/2,y+h);g.drawImage(spriteImage,-visualW/2,-visualH,visualW,visualH);g.restore()}
+  function drawPigSprite(x,y,w,h,face=1){if(!spriteImage)return;const visualW=w*4.05,visualH=h*4.05;g.save();g.translate(x+w/2,y+h);g.drawImage(spriteImage,-visualW/2,-visualH,visualW,visualH);g.restore()}
 
   function show(text,d=2){$("notice").textContent=text;$("status").textContent=text;$("notice").classList.add("show");noticeTimer=d}
   function particles(x,y,color,n=12){for(let i=0;i<(q.performance?Math.min(n,5):n)&&sparks.length<110;i++)sparks.push({x,y,vx:rand(-170,170),vy:rand(-200,10),life:rand(.2,.65),color})}
-  function addScore(n){score+=n;wallet+=n;best=Math.max(best,score);if(!achieved&&score>=3000){achieved=true;spawnRemaining=0;foes=[];intermission=0;sequence=0;seqTimer=0;furnace=Math.max(furnace,maxF()*.7);show("SHIFT TARGET REACHED: 3000 POINTS",2.6);sound(680,.35)}}
+  function addScore(n){score+=n;wallet+=n;best=Math.max(best,score);if(!achieved&&score>=50000){achieved=true;spawnRemaining=0;foes=[];intermission=0;sequence=0;seqTimer=0;furnace=Math.max(furnace,maxF()*.7);show("TARGET: 50,000 POINTS",2.6);sound(680,.35)}}
   function reset(){
     hero={x:330,y:F-62,w:29,h:62,vx:0,vy:0,face:1,hp:100,energy:100,heat:0,inv:0,fireCd:0,jumpBuffer:0,coyote:0,ground:true};
     foes=[];shots=[];sparks=[];pigs=nests.map((x,i)=>({home:x,x,y:F-66,w:60,h:66,mode:"caged",id:i}));
     gates.forEach(a=>a.open=false);Object.keys(definitions).forEach(k=>up[k]=0);
     wave=0;score=0;wallet=0;purchases=0;furnace=100;saved=0;cam=0;clock=0;intermission=3;spawnRemaining=0;spawnTimer=0;achieved=false;sequence=0;seqTimer=0;shockCd=0;eventName="";objectiveName="";acc=0;state="play";keys.clear();touch.clear();
     ["start-screen","pause-screen","help-screen","shop-screen","end-screen"].forEach(id=>$(id).classList.add("hidden"));
-    show("DEFEND THE BOILER · SHIFT TARGET: 3000 POINTS",2.5);startMusic();hud();c.focus()
+    show("DEFEND THE BOILER · TARGET: 50,000 POINTS",2.5);startMusic();hud();c.focus()
   }
   function collision(o,dt){let dx=o.vx*dt,dy=o.vy*dt,n=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/5));o.ground=false;
     for(let i=0;i<n;i++){let old=o.x;o.x=clamp(o.x+dx/n,0,W-o.w);for(let b of [...blocks,...gates.filter(a=>!a.open)])if(overlap(o,b)){if(dx>0&&old+o.w<=b.x+3){o.x=b.x-o.w;o.vx=0}else if(dx<0&&old>=b.x+b.w-3){o.x=b.x+b.w;o.vx=0}}
@@ -268,7 +250,7 @@
   function shock(){if(state!=="play"||shockCd>0)return;shockCd=Math.max(2.5,6-up.cooling*.13);foes.forEach(e=>{if(Math.abs(e.x-hero.x)<175&&Math.abs(e.y-hero.y)<100)hit(e,e.x<hero.x?-1:1)});particles(hero.x+15,F-20,"#d8ed82",24);show("ENERGY WAVE",.85);sound(170,.23)}
   function interact(){if(state!=="play")return;
     if(achieved&&Math.abs(hero.x-EXIT)<105){summary();return}
-    const gate=gates.find(a=>Math.abs(hero.x-a.x)<85);if(gate){gate.open=!gate.open;show(gate.open?"BRAMA OTWARTA":"BRAMA ZAMKNIĘTA",1);sound(190,.12);return}
+    const gate=gates.find(a=>Math.abs(hero.x-a.x)<85);if(gate){gate.open=!gate.open;show(gate.open?"GATE OPEN":"GATE CLOSED",1);sound(190,.12);return}
     const pig=pigs.find(a=>a.mode==="caged"&&Math.abs(hero.x-a.home)<85);if(pig){pig.mode="following";addScore(60);show("PIGLET IS FOLLOWING YOU",1.4);sound(600,.13);return}
     if(Math.abs(hero.x-SHOP)<135){openShop();return}
     show(achieved?"GO TO THE WORKER EXIT":"APPROACH A GATE, PIGLET, OR SHOP",1.5)
@@ -286,11 +268,11 @@
   function hud(){if(!hero)return;
     const vals=[["furnace",furnace,maxF(),"%"],["health",hero.hp,100,"%"],["energy",hero.energy,100,""],["heat",hero.heat,100,"%"]];
     vals.forEach(([id,value,max,suffix])=>{let el=$(id+"-value"),text=Math.ceil(value)+suffix;if(el.textContent!==text)el.textContent=text;$(id+"-fill").style.width=clamp(value/max*100,0,100)+"%";$(id+"-fill").parentElement.setAttribute("aria-valuenow",Math.ceil(value));$(id+"-fill").parentElement.setAttribute("aria-valuemax",Math.ceil(max))});
-    $("score-value").textContent=score+" / 3000";$("wallet-value").textContent=wallet;$("wave-value").textContent=wave;$("threat-value").textContent=achieved?"0":foes.length+spawnRemaining;
+    $("score-value").textContent=score+" / 50000";$("wallet-value").textContent=wallet;$("wave-value").textContent=wave;$("threat-value").textContent=achieved?"0":foes.length+spawnRemaining;
     $("mission-info").textContent=achieved?"BOILER STABLE · YOU MAY EXIT":intermission>0?"BREAK · next wave in "+Math.ceil(intermission)+" s · open the shop":objectiveName+" · "+eventName;
     $("stats-info").textContent="Piglets: "+saved+" · Upgrades: "+purchases+" · Best score this session: "+best+" · Alarm: "+Math.round(210+up.alarm*gain("alarm"))+" m";
-    $("objective").textContent=achieved?"SHIFT TARGET REACHED: 3000 POINTS · GO TO THE EXIT":("REACH 3000 POINTS · "+score+" / 3000 · WAVE "+wave);
-    const z=zones.find(a=>hero.x>=a[1]&&hero.x<a[2]);$("zone").textContent=z?z[0]:"WYJŚCIE";
+    $("objective").textContent=achieved?"TARGET: 50,000 POINTS · GO TO THE EXIT":("TARGET: 50,000 POINTS · "+score+" / 50000 · WAVE "+wave);
+    const z=zones.find(a=>hero.x>=a[1]&&hero.x<a[2]);$("zone").textContent=z?z[0]:"EXIT";
   }
   function update(dt){
     clock+=dt;hero.inv=Math.max(0,hero.inv-dt);hero.fireCd=Math.max(0,hero.fireCd-dt);hero.jumpBuffer=Math.max(0,hero.jumpBuffer-dt);shockCd=Math.max(0,shockCd-dt);
