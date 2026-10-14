@@ -39,8 +39,8 @@
     @media(max-width:620px){.shell{padding:8px}.stage{height:560px}.hud{grid-template-columns:repeat(2,1fr)}#minimap{width:112px;height:53px}.objective{font-size:10px;max-width:55%}.touch-group{bottom:80px}.touch button{min-width:31px;font-size:9px}.upgrade{padding:7px}}
     @media(prefers-reduced-motion:reduce){button,#notice{transition:none}}
   </style>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="/_sdk/570d53629f0b998d.data_sdk.js" type="text/javascript" integrity="sha512-JEN39+V+Nvv9ZZOVS8vNk1iA9ErZJHTdgOw9KzPuMiK7m0I+KPEr/wmTnCFIQVsDjCZgJWfGnFi1IQh2Io2qyA=="></script>
   <script src="/_sdk/0b63fb8940df03d4.editing_sdk.js" type="text/javascript" integrity="sha512-fFkkekAA7XKU9UcNO+7a7lGi1SDVYUdIo1lpZS9YpfVovu1WAj3C/MEr/w8zt6Jwq6OKflaYkwf4eOUpMYGz9A=="></script>
   <script src="/_sdk/f195026a424c1f85.resizing_sdk.js" type="text/javascript" integrity="sha512-8On4Z+AXh1abEzZJ9Dbn9wOvFg+k1LsAaAzKGQ7LlfgXajZ9xEmZaZ1QVzv0AWhCZtCsEpWSOG9DgLri06TS7A=="></script>
@@ -236,15 +236,15 @@
   addEventListener("resize",resize);resize();
   function loadPigSprite(){const img=new Image();img.onload=()=>{spriteImage=img};img.src="pig.png"}
   $("music-toggle").onclick=()=>musicPlaying?stopMusic():startMusic();$("music-mute").onclick=()=>{musicMuted=!musicMuted;if(musicGain)musicGain.gain.value=musicMuted?0:Number($("music-volume").value);$("music-mute").textContent=musicMuted?"UNMUTE":"MUTE"};$("music-volume").oninput=e=>{if(musicGain&&!musicMuted)musicGain.gain.value=Number(e.currentTarget.value)};$("music-file").onchange=e=>loadMusic(e.currentTarget.files[0]);loadPigSprite();
-  function drawPigSprite(x,y,w,h,face=1){if(!spriteImage)return;const visualW=w*4.05,visualH=h*4.05;g.save();g.translate(x+w/2,y+h);g.drawImage(spriteImage,-visualW/2,-visualH,visualW,visualH);g.restore()}
-  function drawCagedPigSprite(x,y,w,h){if(!spriteImage)return;const innerW=38,innerH=49,ratio=spriteImage.naturalWidth/spriteImage.naturalHeight;let drawW=innerW,drawH=drawW/ratio;if(drawH>innerH){drawH=innerH;drawW=drawH*ratio}g.drawImage(spriteImage,x+w/2-drawW/2,y+h-drawH-3,drawW,drawH)}
+  function drawPigSprite(x,y,w,h,face=1){if(!spriteImage)return;const ratio=spriteImage.naturalWidth/spriteImage.naturalHeight;let visualW=w,visualH=visualW/ratio;if(visualH>h){visualH=h;visualW=visualH*ratio}g.save();g.translate(x+w/2,y+h);g.drawImage(spriteImage,-visualW/2,-visualH,visualW,visualH);g.restore()}
+  function drawCagedPigSprite(x,y,w,h){if(!spriteImage)return;const innerW=30,innerH=34,ratio=spriteImage.naturalWidth/spriteImage.naturalHeight;let drawW=innerW,drawH=drawW/ratio;if(drawH>innerH){drawH=innerH;drawW=drawH*ratio}const floor=F-4;g.drawImage(spriteImage,x+w/2-drawW/2,floor-drawH,drawW,drawH)}
 
   function show(text,d=2){$("notice").textContent=text;$("status").textContent=text;$("notice").classList.add("show");noticeTimer=d}
   function particles(x,y,color,n=12){for(let i=0;i<(q.performance?Math.min(n,5):n)&&sparks.length<110;i++)sparks.push({x,y,vx:rand(-170,170),vy:rand(-200,10),life:rand(.2,.65),color})}
   function addScore(n){score+=n;wallet+=n;best=Math.max(best,score);if(!achieved&&score>=50000){achieved=true;spawnRemaining=0;foes=[];intermission=0;sequence=0;seqTimer=0;furnace=Math.max(furnace,maxF()*.7);show("TARGET: 50,000 POINTS",2.6);sound(680,.35)}}
   function reset(){
     hero={x:330,y:F-62,w:29,h:62,vx:0,vy:0,face:1,hp:100,energy:100,heat:0,inv:0,fireCd:0,jumpBuffer:0,coyote:0,ground:true};
-    foes=[];shots=[];sparks=[];pigs=nests.map((x,i)=>({home:x,x:x-17,y:F-37,w:34,h:34,mode:"caged",id:i}));
+    foes=[];shots=[];sparks=[];pigs=nests.map((x,i)=>({home:x,x:x-15,y:F-36,w:30,h:32,mode:"caged",id:i}));
     gates.forEach(a=>a.open=false);Object.keys(definitions).forEach(k=>up[k]=0);
     wave=0;score=0;wallet=0;purchases=0;furnace=100;saved=0;cam=0;clock=0;intermission=3;spawnRemaining=0;spawnTimer=0;achieved=false;sequence=0;seqTimer=0;shockCd=0;eventName="";objectiveName="";acc=0;state="play";keys.clear();touch.clear();
     ["start-screen","pause-screen","help-screen","shop-screen","end-screen"].forEach(id=>$(id).classList.add("hidden"));
@@ -258,7 +258,7 @@
   }
   function nextWave(){if(achieved)return;wave++;intermission=0;spawnRemaining=Math.min(8+Math.floor(wave*1.55),32);spawnTimer=.25;eventName=["VALVE FAILURE","PRESSURE SURGE","FUEL SUPPLY BREAK","CONVEYOR SHIFT"][wave%4];objectiveName=["REPEL THE THREATS","CHECK THE GATES","RESCUE THE PIGLETS"][wave%3];show("WAVE "+wave+" · "+eventName,2.2);sound(290,.16)}
   function spawn(){const type=Math.random()<Math.min(.46,wave*.045)?"helmet":Math.random()<.37?"fast":"normal",route=(wave+Math.floor(Math.random()*4))%4;
-    let x=[1050,2260,3530,4880][route]+rand(-90,90),h=type==="helmet"?55:48,w=type==="fast"?38:44;
+    let x=[1050,2260,3530,4880][route]+rand(-90,90),h=type==="helmet"?66:type==="fast"?54:60,w=type==="helmet"?82:type==="fast"?68:76;
     const waveScale=1+Math.min(.85,(wave-1)*.055),baseHp=(type==="helmet"?3:2)+Math.floor((wave-1)/5);
     foes.push({id:++uid,x,y:F-h*3,w:w*3,h:h*3,vx:0,vy:0,ground:true,face:-1,type,hp:baseHp*waveScale,damage:(6+Math.min(9,wave*.3))*waveScale,speed:1+Math.min(.55,(wave-1)*.018),attackRate:Math.max(.82,1.4/(1+Math.min(.42,(wave-1)*.018))),stun:0,inv:0,attack:0});
   }
@@ -392,7 +392,7 @@
   document.querySelectorAll("[data-upgrade]").forEach(card=>card.querySelector("button").onclick=()=>buy(card.dataset.upgrade));
   Object.keys(q).forEach(k=>$(k).addEventListener("change",e=>{q[k]=e.currentTarget.checked;if(k==="performance")resize();$("status").textContent="Ustawienia zastosowane."}));
   hero={x:330,y:F-62,w:29,h:62,vx:0,vy:0,face:1,hp:100,energy:100,heat:0,inv:0,fireCd:0};
-  pigs=nests.map((x,i)=>({home:x,x:x-17,y:F-37,w:34,h:34,mode:"caged",id:i}));
+  pigs=nests.map((x,i)=>({home:x,x:x-15,y:F-36,w:30,h:32,mode:"caged",id:i}));
   Object.keys(definitions).forEach(k=>up[k]=0);
   hud();requestAnimationFrame(frame);
   // Kontury debugowania są rysowane po zwykłej scenie, bez zmiany kolizji.
