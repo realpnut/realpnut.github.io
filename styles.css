@@ -48,16 +48,27 @@ body {
 }
 
 @keyframes drift {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .crt-overlay {
     position: fixed;
     inset: 0;
     background:
-        linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,.13) 50%),
-        linear-gradient(90deg, rgba(0,120,255,.025), rgba(0,255,255,.015));
+        linear-gradient(
+            rgba(18,16,16,0) 50%,
+            rgba(0,0,0,.13) 50%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,120,255,.025),
+            rgba(0,255,255,.015)
+        );
     background-size: 100% 3px, 3px 100%;
     z-index: 10;
     pointer-events: none;
@@ -78,9 +89,15 @@ body {
 }
 
 @keyframes scanline {
-    from { transform: translateY(0); }
-    to { transform: translateY(100%); }
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
 }
+
+/* MAIN LAYOUT */
 
 .frame {
     display: flex;
@@ -99,6 +116,8 @@ body {
     flex-direction: column;
     gap: 22px;
 }
+
+/* HEADER */
 
 .header {
     border-bottom: 1px solid var(--border);
@@ -124,11 +143,14 @@ body {
 }
 
 .cursor {
+    display: inline-block;
     animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 .subtitle {
@@ -140,11 +162,21 @@ body {
 }
 
 @keyframes glitch {
-    0%, 90%, 100% { transform: translate(0); }
-    92% { transform: translate(-1px, 1px); }
-    94% { transform: translate(1px, -1px); }
-    96% { transform: translate(-1px, 0); }
+    0%, 90%, 100% {
+        transform: translate(0);
+    }
+    92% {
+        transform: translate(-1px, 1px);
+    }
+    94% {
+        transform: translate(1px, -1px);
+    }
+    96% {
+        transform: translate(-1px, 0);
+    }
 }
+
+/* STATUS */
 
 .online {
     color: #70e9a0;
@@ -159,6 +191,8 @@ body {
     box-shadow: 0 0 8px #70e9a0;
     margin-right: 5px;
 }
+
+/* NAVIGATION */
 
 .nav {
     display: flex;
@@ -199,6 +233,8 @@ body {
     box-shadow: 0 0 15px #ff69b4;
 }
 
+/* CONTENT PANELS */
+
 .content {
     display: flex;
     flex-direction: column;
@@ -210,7 +246,10 @@ body {
     border: 1px solid #204d7b;
     box-shadow: 0 0 16px rgba(0,120,255,.08);
     backdrop-filter: blur(6px);
-    transition: border-color .25s, box-shadow .25s, transform .25s;
+    transition:
+        border-color .25s,
+        box-shadow .25s,
+        transform .25s;
 }
 
 .panel:hover {
@@ -245,10 +284,14 @@ body {
     color: #b4cce2;
 }
 
+/* LEARNING LIST */
+
 .learning span {
     color: var(--cyan);
     margin-right: 8px;
 }
+
+/* TERMINAL */
 
 .terminal {
     border: 1px solid rgba(0,229,255,.3);
@@ -257,6 +300,8 @@ body {
 }
 
 .terminal-title {
+    display: flex;
+    justify-content: space-between;
     padding: 8px 12px;
     font-size: .7rem;
     color: var(--cyan);
@@ -275,6 +320,8 @@ body {
     color: var(--cyan);
 }
 
+/* FOOTER */
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -287,7 +334,7 @@ body {
     color: var(--muted);
 }
 
-.footer div {
+.footer-info {
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -303,6 +350,8 @@ body {
     color: white;
     text-shadow: 0 0 8px var(--blue);
 }
+
+/* SCROLLBAR */
 
 body::-webkit-scrollbar {
     width: 8px;
@@ -321,7 +370,10 @@ body::-webkit-scrollbar-thumb:hover {
     background: var(--blue);
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
+
     .frame {
         padding: 25px 14px;
     }
@@ -353,10 +405,19 @@ body::-webkit-scrollbar-thumb:hover {
     .footer {
         align-items: flex-start;
     }
+
+    .terminal-content {
+        font-size: .7rem;
+        overflow-wrap: anywhere;
+    }
 }
 
+/* ACCESSIBILITY */
+
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
